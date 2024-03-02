@@ -97,7 +97,7 @@ class Augmentor():
         
         i = 0
         num_cells = 0
-        while i < len(packets) and num_cells < 38: #updated 2/25 ####조작시 처음 20cell은 냅둠 (=for protocol 초기화, handshake// 웹사이트 구별용)
+        while i < len(packets) and num_cells < 38: #updated 2o -> 38 (=for protocol initialization, handshake// level change from bursts to sizes)
             num_cells += abs(packets[i])
             out.append(packets[i])
             i += 1  ## = len(out)
