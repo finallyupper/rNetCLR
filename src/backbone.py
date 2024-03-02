@@ -1,4 +1,4 @@
-from __future__ import absolute_import ##__future__ 사용하면 최신 버전 불러올 수 있음.
+from __future__ import absolute_import 
 from __future__ import division
 from __future__ import print_function
 from __future__ import unicode_literals
