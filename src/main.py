@@ -119,11 +119,11 @@ class TrainData(Dataset):
         self.n_views = n_views
     
     def _aug(self, inp): #weak augmentation
-        flip_idx = np.random.randint(0, 4999, 250) #flip할 index를 0~4999에서 250개 랜덤 선택
+        flip_idx = np.random.randint(0, 4999, 250)
         x_w = inp.copy()
         temp = x_w[flip_idx]
         x_w[flip_idx] = x_w[flip_idx+1]
-        x_w[flip_idx+1] = temp #flip_idx와 filp_idx+1 위치의 값들 스왑
+        x_w[flip_idx+1] = temp 
         return x_w
     
     def __getitem__(self, index):
@@ -173,7 +173,7 @@ def main(output_path, logs_name, batch_size = 256, num_epoches=100, temperature=
     augmentor = Augmentor(logs_path, OUTCOMING_SIZE_CDF, outcoming_sizes, max_outcoming_size)
 
     # n_view = 2
-    train_dataset = TrainData(x_train, y_train, augmentor, 2) ## 3개로? #TrainData(x_train, y_train, augmentor, 2)
+    train_dataset = TrainData(x_train, y_train, augmentor, 2) ## #TrainData(x_train, y_train, augmentor, 2)
     train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, drop_last=True)
 
     df = DFNet(out_dim=512)
