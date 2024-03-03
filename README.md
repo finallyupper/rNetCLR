@@ -3,6 +3,7 @@
 augmented network traces in realistc website fingerprinting w/ own manipulation rules. The original code is splitted into several python files for convenience.
 - If you implement this code, specify the path of `DATA_ABSOLUTE_PATH` and `LOG_ABSOLUTE_PATH` in main.py.
 (* Also you can add other rules in `Augmentor` at `augmentor.py`)
+- This code is re-implemented that fits to 'sizes' and 'timestamps' features unlike the original code, 'bursts'.
 ## Usage Examples
 ```
 python main.py --o "models/nj_4_e_" --logs_name "nj_4_e_100.txt" -b 256 -n 100 -t 0.5 --method 0
